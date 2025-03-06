@@ -94,17 +94,17 @@ ASGI_APPLICATION = 'chatAPI.asgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 external = "postgresql://django_chat_db_2pgd_user:fDOBOiEXAE4u67sIfrcrA6aQzrZif81v@dpg-cv4vipt2ng1s73fkua00-a.oregon-postgres.render.com/django_chat_db_2pgd"
 
-if not DEBUG:
-    DATABASES = {
-        'default': dj_database_url.parse(external)
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+# if not DEBUG:
+DATABASES = {
+    'default': dj_database_url.parse(external)
+}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
 
 
 DATABASES["default"] = dj_database_url.parse(external)
