@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-j1c_(b!172i8*nl(41+vbal%_s^y=3*3!i$p&@)z@0r*r%8bpy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nuxlink-chat.onrender.com', '*']
 
 AUTH_USER_MODEL = 'user.User'
 
