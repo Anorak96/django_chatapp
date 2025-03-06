@@ -20,7 +20,7 @@ class RoomSerializer(serializers.ModelSerializer):
         depth = 1
 
 class CreateRoomSerializer(serializers.ModelSerializer):
-    participants = ser.UserSerializer(write_only=True, required=False, many=True)
+    participants = ser.UserSerializer(write_only=True, required=False, many=True, allow_null=True)
 
     class Meta:
         model = models.Room
