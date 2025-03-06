@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -65,6 +66,10 @@ ROOT_URLCONF = 'chatAPI.urls'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://nuxlink-chat.onrender.com'
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -94,6 +99,8 @@ DATABASES = {
     }
 }
 
+external = "postgresql://django_chat_db_2pgd_user:fDOBOiEXAE4u67sIfrcrA6aQzrZif81v@dpg-cv4vipt2ng1s73fkua00-a.oregon-postgres.render.com/django_chat_db_2pgd"
+DATABASES["default"] = dj_database_url.parse(external)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
