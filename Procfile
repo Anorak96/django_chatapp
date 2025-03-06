@@ -1,1 +1,1 @@
-daphne -b 0.0.0.0 -p $PORT chatAPI.asgi:application
+web: daphne -b 0.0.0.0 -p 8000 chatAPI.asgi:application
